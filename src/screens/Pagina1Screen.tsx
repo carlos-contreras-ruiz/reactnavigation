@@ -1,12 +1,21 @@
 /* eslint-disable react-native/no-inline-styles */
-import {NativeStackScreenProps} from '@react-navigation/native-stack';
-import React from 'react';
+import {DrawerScreenProps} from '@react-navigation/drawer';
+//import {NativeStackScreenProps} from '@react-navigation/native-stack';
+import React, {useEffect} from 'react';
 import {Button, Text, TouchableOpacity, View} from 'react-native';
 import {globalStyles} from '../theme/appTheme';
 
-interface Props extends NativeStackScreenProps<any, any> {}
+//interface Props extends NativeStackScreenProps<any, any> {}
+interface Props extends DrawerScreenProps<any, any> {}
 
 export const Pagina1Screen = ({navigation}: Props) => {
+  useEffect(() => {
+    navigation.setOptions({
+      headerLeft: () => (
+        <Button title="Menu" onPress={() => navigation.toggleDrawer()} />
+      ),
+    });
+  }, []);
   return (
     <View style={globalStyles.globalMargin}>
       <Text>Pagina1Screenn</Text>
