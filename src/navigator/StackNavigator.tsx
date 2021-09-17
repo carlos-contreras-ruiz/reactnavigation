@@ -19,7 +19,7 @@ export const StackNavigator = () => {
   return (
     <Stack.Navigator
       screenOptions={{
-        headerShown: false,//esconde la barra
+        headerShown: false, //esconde la barra
         headerStyle: {
           backgroundColor: 'white',
         },
