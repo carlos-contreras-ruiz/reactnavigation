@@ -6,7 +6,6 @@ import {Tab1Screen} from '../screens/Tab1Screen';
 //import {Tab3Screen} from '../screens/Tab3Screen';
 import {StackNavigator} from './StackNavigator';
 import {colors} from '../theme/appTheme';
-import {Text} from 'react-native';
 import {TopTabNAvigator} from './TopTabNAvigator';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -20,7 +19,8 @@ export const Tabs = () => {
         elevation: 0,
       }}
       screenOptions={({route}) => ({
-        tabBarIcon: ({color, focused, size}) => {
+        //tabBarIcon: ({color, focused, size}) => {
+        tabBarIcon: ({color}) => {
           let iconName: string;
 
           switch (route.name) {
@@ -49,9 +49,9 @@ export const Tabs = () => {
       })}>
       <Tab.Screen
         name="Tab1Screen"
-        options={{
+        /*options={{
           //tabBarIcon: props => <Text style={{color: props.color}}>Icono</Text>,
-        }}
+        }}*/
         component={Tab1Screen}
       />
       <Tab.Screen name="TopTabNAvigator" component={TopTabNAvigator} />
